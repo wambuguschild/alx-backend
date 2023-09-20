@@ -13,10 +13,8 @@ def index_range(page: int, page_size: int) -> tuple:
     Returns:
         tuple: A tuple containing the start and end indexes (both inclusive).
     """
-    if page < 1 or page_size < 1:
-        raise ValueError("Page and page_size must be greater than or equal to 1.")
 
     start_index = (page - 1) * page_size
     end_index = start_index + page_size - 1
 
-    return start_index, end_index
+    return (start_index, end_index)
