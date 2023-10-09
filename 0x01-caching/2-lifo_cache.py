@@ -33,7 +33,6 @@ class LIFOCache(BaseCaching):
             key (str): The key for the item.
             item (str): The item to be cached.
         """
-        # Check if key and item are not None
         if key is not None and item is not None:
             if len(self.cache_data) >= self.MAX_ITEMS:
                 # If the cache is full, remove the last item (LIFO eviction)
