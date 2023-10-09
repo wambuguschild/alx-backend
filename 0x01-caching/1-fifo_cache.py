@@ -23,11 +23,9 @@ class FIFOCache(BaseCaching):
         if key is not None and item is not None:
             if len(self.cache_data) >= self.MAX_ITEMS:
                 # If the cache is full, remove the first item (FIFO eviction)
-                removed_key = self.order[0]
-                del self.cache_data[removed_key]
-                print(f"DISCARD: {removed_key}\n")
-                self.order.pop(0)
-
+                oldest_key = self.order.pop(0)
+                del self.cache_data[oldest_key]
+                print(f"DISCARD: {oldest_key}")
             # Add the new item to the cache_data and update the order
             self.cache_data[key] = item
             self.order.append(key)
