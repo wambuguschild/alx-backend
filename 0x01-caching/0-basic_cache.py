@@ -3,6 +3,7 @@
 """
 from base_caching import BaseCaching
 
+
 class BasicCache(BaseCaching):
     """ BasicCache class, a caching system without a limit.
     """
